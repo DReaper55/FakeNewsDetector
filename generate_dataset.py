@@ -1,7 +1,6 @@
 import joblib
 import pandas as pd
 from preprocess_text import preprocess_text
-import h5py
 import numpy as np
 
 df_fake = pd.read_csv("./assets/Fake.csv")
