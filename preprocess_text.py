@@ -1,5 +1,6 @@
 import re
 
+import joblib
 import nltk
 
 from nltk.tokenize import word_tokenize
@@ -9,8 +10,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # nltk.download('punkt')
 # nltk.download('punkt_tab')
 # nltk.download('stopwords')
-
-tfidf_vectorizer = TfidfVectorizer()
 
 # Predefined set of stopwords
 stop_words = set(stopwords.words('english'))
@@ -47,8 +46,13 @@ def preprocess_text(texts, fit_vectorizer=False):
 
     # Vectorize the cleaned texts
     if fit_vectorizer:
+        tfidf_vectorizer = TfidfVectorizer()
         vectorized_texts = tfidf_vectorizer.fit_transform(cleaned_texts)  # Fit and transform during training
+
+        # Save the fitted TF-IDF vectorizer
+        joblib.dump(tfidf_vectorizer, "tfidf_vectorizer.pkl")
     else:
+        tfidf_vectorizer = joblib.load("tfidf_vectorizer.pkl")
         vectorized_texts = tfidf_vectorizer.transform(cleaned_texts)  # Only transform during inference
 
     return vectorized_texts
