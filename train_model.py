@@ -7,8 +7,8 @@ from sklearn.tree import DecisionTreeClassifier
 # from lime.lime_text import LimeTextExplainer
 import shap
 
-X_loaded = joblib.load('X_features.joblib')
-y_loaded = joblib.load('y_labels.joblib')
+X_loaded = joblib.load('assets/X_features.joblib')
+y_loaded = joblib.load('assets/y_labels.joblib')
 
 # Ensure X_loaded is the sparse matrix itself
 if isinstance(X_loaded, np.ndarray) and X_loaded.size == 1:

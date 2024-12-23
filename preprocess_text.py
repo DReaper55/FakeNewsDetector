@@ -50,9 +50,9 @@ def preprocess_text(texts, fit_vectorizer=False):
         vectorized_texts = tfidf_vectorizer.fit_transform(cleaned_texts)  # Fit and transform during training
 
         # Save the fitted TF-IDF vectorizer
-        joblib.dump(tfidf_vectorizer, "tfidf_vectorizer.pkl")
+        joblib.dump(tfidf_vectorizer, "assets/tfidf_vectorizer.pkl")
     else:
-        tfidf_vectorizer = joblib.load("tfidf_vectorizer.pkl")
+        tfidf_vectorizer = joblib.load("assets/tfidf_vectorizer.pkl")
         vectorized_texts = tfidf_vectorizer.transform(cleaned_texts)  # Only transform during inference
 
     return vectorized_texts

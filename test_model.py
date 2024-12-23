@@ -2,7 +2,7 @@ import joblib
 from preprocess_text import preprocess_text
 
 # Load the saved model
-model = joblib.load("text_classifier_model.pkl")
+model = joblib.load("assets/text_classifier_model.pkl")
 
 
 def make_prediction(texts):
@@ -26,7 +26,7 @@ def make_prediction(texts):
     return format_pred
 
 
-# Example new text for prediction
+# # Example new text for prediction
 # new_texts = [
 #     "Breaking news: The government announces new policies for the economy.",
 #     "Aliens have landed on Earth and are living among us!",
