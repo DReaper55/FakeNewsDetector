@@ -150,6 +150,37 @@ for text, pred in zip(new_texts, predictions):
     print(f"Text: {text}\nPredicted Label: {'Fake News' if pred == 0 else 'Real News'}\n")
 ```
 
+## Model Performance
+
+During model selection, multiple models were evaluated based on their performance. Below are the results for several models:
+
+### **Logistic Regression**
+- **Accuracy**: 98.80%
+- **Precision**: 98.53%
+- **Recall**: 98.95%
+- **F1-Score**: 98.74%
+
+### **Support Vector Classifier (SVC)**
+- **Accuracy**: 99.53%
+- **Precision**: 99.44%
+- **Recall**: 99.58%
+- **F1-Score**: 99.51%
+
+### **Gradient Boosting Classifier (GBC)**
+- **Accuracy**: 99.54%
+- **Precision**: 99.42%
+- **Recall**: 99.63%
+- **F1-Score**: 99.52%
+
+### **Decision Tree Classifier**
+- **Accuracy**: 99.62%
+- **Precision**: 99.65%
+- **Recall**: 99.56%
+- **F1-Score**: 99.60%
+
+After evaluating multiple models, **Decision Tree** was chosen as the best model due to its balance between performance and simplicity, achieving the highest **accuracy**, **precision**, **recall**, and **F1-score** among the tested models.
+
+
 ## Model Evaluation Metrics
 
 - **Accuracy**: The proportion of correctly classified articles.
